@@ -1,0 +1,7 @@
+.darkmode {
+  gap: 0.5rem;
+}
+
+.darkmode:is(:hover, :active) {
+  border-bottom: 1px solid currentColor;
+}

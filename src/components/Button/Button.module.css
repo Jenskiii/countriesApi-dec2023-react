@@ -1,0 +1,13 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid transparent;
+  background-color: transparent;
+  font-size: var(--fs-450);
+  font-family: inherit;
+  font-weight: var(--fw-semiBold);
+  color: currentColor;
+  transition: 250ms ease-in-out;
+}

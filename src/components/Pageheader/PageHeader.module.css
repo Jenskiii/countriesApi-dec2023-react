@@ -1,0 +1,17 @@
+.header {
+  background-color: hsl(var(--clr-neutral));
+  padding-block: 2rem;
+}
+
+.header h1{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: var(--fs-800);
+}
+
+@media( min-width: 45em){
+    .header{
+        padding-block: 1.5rem;
+    }
+}

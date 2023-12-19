@@ -1,0 +1,41 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+  padding: .85rem 2rem;
+  border-radius: 0.5rem;
+  background-color: hsl(var(--clr-neutral));
+  max-width: 30rem;
+}
+
+.group input,
+.group select {
+  cursor: pointer;
+  font-size: var(--fs-300);
+  font-family: inherit;
+  color: inherit;
+  background-color: hsl(var(--clr-neutral));
+  border: none;
+  outline: none;
+  width: 100%;
+}
+/* add cursor to "X" icon inside input type="search" */
+.group input::-webkit-search-cancel-button{
+  cursor: pointer;
+}
+
+/* search icon */
+.group ion-icon{
+  width: 1.5rem;
+}
+
+::placeholder {
+  color: inherit;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
