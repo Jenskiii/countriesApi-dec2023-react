@@ -1,0 +1,10 @@
+.even-columns{
+    display: grid;
+    gap: 2.75rem;
+
+
+    @media(min-width:77em){
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}

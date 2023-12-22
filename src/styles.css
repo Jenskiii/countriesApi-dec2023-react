@@ -9,12 +9,14 @@
     --clr-elements: 0 0% 52%;
     --clr-text: 200 15% 8%; 
     --clr-background: 0 0% 98%;
+    --clr-spinner: 110 98% 48%;
   }
   .dark {
     --clr-neutral: 209 23% 22%;
     --clr-elements: 207 26% 17%; 
     --clr-text: 0 0% 100%;
     --clr-background: 207 26% 17%;
+    --clr-spinner: 0 43%	14%; 
   }
 
   /* typography */
@@ -45,6 +47,7 @@
   --br-1: 0.125rem;
   --br-2: 0.3125rem;
   --br-3: 0.375rem;
+  --br-4: 0.8rem;
 }
 
 /*// RESET //*/
@@ -93,6 +96,11 @@ body {
   max-width: 81.5rem;
 }
 
+.flex{
+  display: flex;
+}
+
 .error{
   color: #ff3333;
+  font-size: var(--fs-300);
 }

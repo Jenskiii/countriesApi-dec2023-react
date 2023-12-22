@@ -11,3 +11,31 @@
   color: currentColor;
   transition: 250ms ease-in-out;
 }
+
+/* back button */
+.back-button {
+  gap: 0.6rem;
+  background-color: hsl(var(--clr-neutral));
+  font-size: var(--fs-500);
+  font-weight: var(--fw-light);
+  border-radius: var(--br-3);
+  padding: 0.63rem 2rem;
+  box-shadow: 0px 0px 4px 1px hsl(var(--clr-text)/.1);
+}
+
+.back-button:is(:hover,:active),
+.border-country__button:is(:hover,:active) {
+  box-shadow: 0px 0px 4px 1px hsl(var(--clr-text)/.75);
+}
+
+/* border button */
+.border-country__button {
+  display: grid;
+  place-items: center;
+  background-color: hsl(var(--clr-neutral));
+  width: 6rem;
+  height: 1.75rem;
+  border-radius: var(--br-1);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-light);
+}

@@ -1,7 +1,7 @@
 import { Navigate, createBrowserRouter, useRouteError } from "react-router-dom";
 import { RootLayout } from "./layouts/RootLayout/RootLayout";
-import { countryListRoute } from "./pages/CountryList";
-import { countryRoute } from "./pages/Country";
+import { countryListRoute } from "./pages/CountryList/CountryList";
+import { countryRoute } from "./pages/Country/Country";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +21,8 @@ export const router = createBrowserRouter([
                 ...countryListRoute,
               },
               {
-                path: ":countryName", ...countryRoute
+                path: ":countryCode",
+                ...countryRoute,
               },
             ],
           },

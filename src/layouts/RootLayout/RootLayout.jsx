@@ -1,9 +1,11 @@
-import { Outlet, ScrollRestoration } from "react-router-dom";
+import { Outlet, ScrollRestoration, useNavigation } from "react-router-dom";
 import { PageHeader } from "../../components/Pageheader/PageHeader";
 import styles from "./RootLayout.module.css";
 import { ToggleDarkMode } from "../../components/ToggleDarkMode/ToggleDarkMode";
 
 export function RootLayout() {
+  const { state } = useNavigation();
+  const isLoading = state === "loading";
   return (
     <>
       <PageHeader>
@@ -17,7 +19,12 @@ export function RootLayout() {
       <ScrollRestoration />
 
       {/* content  */}
-      <div className={`${styles.layout} container`}>
+      {isLoading && <div className={styles.loadingSpinner} />}
+      <div
+        className={`${styles.layout} ${
+          isLoading ? styles.loading : ""
+        } | container`}
+      >
         <Outlet />
       </div>
     </>
