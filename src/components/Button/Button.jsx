@@ -37,12 +37,12 @@ export function BorderCounryButton({ link, value }) {
   const { state } = useNavigation();
   const isLoading = state === "loading";
   return (
-    <Button
-      to={link}
-      AsComponent={Link}
-      className={styles["border-country__button"]}
-    >
-      {isLoading ? "Loading..." : value}
-    </Button>
+      <Button
+        to={ isLoading ? "" : link}
+        AsComponent={Link}
+        className={styles["border-country__button"]}
+      >
+        {isLoading ? "Loading..." : value}
+      </Button>
   );
 }

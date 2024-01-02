@@ -1,0 +1,89 @@
+.select {
+  position: relative;
+  width: 12.5rem;
+  font-size: var(--fs-450);
+  line-height: 1.25rem;
+  padding: 0.88rem 1.2rem 0.88rem 1.5rem;
+  background-color: hsl(var(--clr-neutral));
+  border-radius: var(--br-3);
+}
+
+
+/* title */
+.select-title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.caret {
+  display: grid;
+  place-items: center;
+  transition: 250ms linear;
+}
+
+.caret.active {
+  transform: rotate(180deg);
+}
+
+
+/* List */
+.select-list {
+  position: absolute;
+  left: -100rem;
+  top: 3.25rem;
+  background-color: hsl(var(--clr-neutral));
+  border-radius: var(--br-3);
+  width: 12.5rem;
+  padding-block: 1rem;
+  opacity: 0;
+  transition: opacity 400ms linear;
+  
+  z-index: 5;
+}
+
+.select-list.active {
+  left: 0;
+  opacity: 1;
+}
+
+.select-list_item {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  transition: 500ms ease-in-out;
+}
+.select-list_item.active,
+.select-list_item:is(:hover, :active) {
+  background-color: hsl(var(--clr-select));
+}
+
+
+/* clear button */
+.clear{
+  cursor: pointer;
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semiBold);
+  text-decoration: underline;
+  text-align: right;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+  transition: 250ms ease-in-out;
+}
+
+.clear:is(:hover, :active){
+  color: rgb(255, 86, 86);
+}
+
+/* menucloser when click outside */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+}

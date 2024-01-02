@@ -4,44 +4,45 @@ import { getCountries } from "../../api/countries";
 import { Link, useLoaderData } from "react-router-dom";
 import { Card, CardGrid } from "../../components/Card/Card";
 import { Button } from "../../components/Button/Button";
-import { ListItem } from "../../components/ListItem/ListItem";
-import styles from "./CountryList.module.css"
-
+import { List } from "../../components/List/List";
+import { countryRegions } from "../../utils/regions";
+import { Select } from "../../components/Select/Select";
+import styles from "./CountryList.module.css";
 
 function CountryList() {
   const queryRef = useRef();
-  const countries = useLoaderData();
+  const countries  = useLoaderData();
 
   return (
     <>
-      <Form>
-        <FormRow>
-          <FormGroup>
-            <FormRow>
-              <ion-icon name="search-outline"></ion-icon>
-              <input
-                type="search"
-                name="query"
-                id="query"
-                ref={queryRef}
-                placeholder="Search for a country…"
-              />
-            </FormRow>
-          </FormGroup>
+      <Form  className={styles.form}>
+        <FormGroup>
+          <FormRow>
+            <ion-icon name="search-outline"></ion-icon>
+            <input
+              type="search"
+              name="query"
+              id="query"
+              ref={queryRef}
+              placeholder="Search for a country…"
+            />
+            <button>hey</button>
+          </FormRow>
+        </FormGroup>
 
-          <FormGroup></FormGroup>
-        </FormRow>
+        <Select title={"Region"} values={countryRegions} />
       </Form>
 
-    {/* CARD GRID */}
+      {/* CARD GRID */}
       <CardGrid className={styles["page-spacing"]}>
         {countries.map((country) => {
           // stored information inside array to make a list
-            const countryInformation = [
-              { id: crypto.randomUUID(), title: "Population:", value: country.population,},
-              { id: crypto.randomUUID(), title: "Region:", value: country.region,},
-              { id: crypto.randomUUID(), title: "Capital:", value: country.capital,},
-            ]
+          const cardInformation = [
+            { title: "Population:", value: country.population },
+            { title: "Region:", value: country.region },
+            { title: "Capital:", value: country.capital },
+          ];
+
           return (
             // CARD
             <Card
@@ -52,15 +53,9 @@ function CountryList() {
                 </Button>
               }
               title={country.name.common}
-            > 
-            {/* CARD BODY */}
-            <ul>
-              {countryInformation.map(item =>{
-                return (
-                <ListItem key={item.id} title={item.title} value={item.value}/>
-                )
-              })}
-            </ul>
+            >
+              {/* CARD BODY */}
+              <List value={cardInformation} />
             </Card>
           );
         })}
@@ -69,10 +64,11 @@ function CountryList() {
   );
 }
 
-
 // LOADER
 function loader({ request: { signal } }) {
-  return getCountries({ signal });
+ 
+  let filter = "all"
+  return getCountries(filter,{ signal });
 }
 
 export const countryListRoute = {

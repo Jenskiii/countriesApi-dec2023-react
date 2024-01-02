@@ -5,3 +5,16 @@
         margin-top: 3rem;
     }
 }
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+@media(min-width: 45em){
+    .form{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

@@ -1,14 +1,18 @@
 import { Form as RouterForm } from "react-router-dom";
-import styles from "./Form.module.css"
+import styles from "./Form.module.css";
 
+// form
 export function Form({ className, ...props }) {
   return <RouterForm className={`${styles.form} ${className}`} {...props} />;
 }
 
-export function FormGroup({ children, errorMessage }) {
+// form group
+export function FormGroup({ children, errorMessage, className }) {
   return (
     <div
-      className={`${styles.group} ${errorMessage != null ? styles.error : ""}`}
+      className={`${styles.group} ${className} ${
+        errorMessage != null ? styles.error : ""
+      }`}
     >
       {children}
       {errorMessage != null && (
@@ -18,10 +22,9 @@ export function FormGroup({ children, errorMessage }) {
   );
 }
 
-export function FormRow({children}) {
-    return(
-        <div className={styles.row}>
-            {children}
-        </div>
-    )
+// form row
+export function FormRow({ children, className }) {
+  return <div className={`${className} ${styles.row}`}>{children}</div>;
 }
+
+

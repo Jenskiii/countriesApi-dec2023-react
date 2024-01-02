@@ -1,9 +1,9 @@
-.list{
+.list-item{
     font-size: var(--fs-500);
     line-height: 2rem;
     font-weight: 300;
 }
 
-.title{
+.list-title{
     font-weight: 600;
 }

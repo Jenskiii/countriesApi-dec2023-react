@@ -1,7 +1,7 @@
 import { baseApi } from "./base";
 
-export function getCountries(options){
-    return baseApi.get("all", options).then(res => res.data)
+export function getCountries( filter,options){
+    return baseApi.get(filter, options).then(res => res.data)
 }
 
 export function getCountry(countryCode,options){

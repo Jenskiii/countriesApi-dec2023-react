@@ -3,14 +3,13 @@
   flex-direction: column;
   gap: 0.25rem;
   flex-grow: 1;
-  padding: .85rem 2rem;
   border-radius: 0.5rem;
   background-color: hsl(var(--clr-neutral));
   max-width: 30rem;
+  padding: 1rem 2rem;
 }
 
-.group input,
-.group select {
+.group input {
   cursor: pointer;
   font-size: var(--fs-300);
   font-family: inherit;
@@ -21,12 +20,12 @@
   width: 100%;
 }
 /* add cursor to "X" icon inside input type="search" */
-.group input::-webkit-search-cancel-button{
+.group input::-webkit-search-cancel-button {
   cursor: pointer;
 }
 
 /* search icon */
-.group ion-icon{
+.group ion-icon {
   width: 1.5rem;
 }
 

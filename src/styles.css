@@ -10,6 +10,7 @@
     --clr-text: 200 15% 8%; 
     --clr-background: 0 0% 98%;
     --clr-spinner: 110 98% 48%;
+    --clr-select: 197 100% 75%;
   }
   .dark {
     --clr-neutral: 209 23% 22%;
@@ -17,6 +18,7 @@
     --clr-text: 0 0% 100%;
     --clr-background: 207 26% 17%;
     --clr-spinner: 0 43%	14%; 
+    --clr-select: 197 100% 50%;
   }
 
   /* typography */
