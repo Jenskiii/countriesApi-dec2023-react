@@ -17,6 +17,7 @@ export function Select({ title, values, className, setSelected }) {
     if (activeIndex !== null) {
       setActiveIndex(null);
       setSelected("");
+      setIsActive(false)
     }
   }
   return (
