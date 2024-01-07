@@ -3,21 +3,20 @@ import { useState } from "react";
 import styles from "./Select.module.css";
 
 // select
-export function Select({ title, values, className }) {
+export function Select({ title, values, className, setSelected }) {
   const [activeIndex, setActiveIndex] = useState(null);
   const [isActive, setIsActive] = useState(false);
-  const [selectValue, setSelectValue] = useState()
 
   function setIndex(index, region) {
     setActiveIndex(index);
     setIsActive(false);
-    setSelectValue(region)
+    setSelected(region)
   }
 
   function clearIndex() {
     if (activeIndex !== null) {
       setActiveIndex(null)
-      setSelectValue(undefined)
+      setSelected("")
     } 
   }
 

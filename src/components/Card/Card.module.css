@@ -1,7 +1,14 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 16.5rem);
-  gap: 4.5rem;
+  gap: 2.5rem;
+  @media(min-width:40em){
+    justify-content: center;
+  }
+
+  @media(min-width:70em){
+     gap: 4.5rem;
+  }
 }
 
 .card {
