@@ -10,27 +10,22 @@ export function Select({ title, values, className, setSelected }) {
   function setIndex(index, region) {
     setActiveIndex(index);
     setIsActive(false);
-    setSelected(region)
+    setSelected(region);
   }
 
   function clearIndex() {
     if (activeIndex !== null) {
-      setActiveIndex(null)
-      setSelected("")
-    } 
+      setActiveIndex(null);
+      setSelected("");
+    }
   }
-
   return (
     <>
+      {/* MODAL */}
+      {isActive && (
+        <div className={styles.modal} onClick={() => setIsActive(false)}></div>
+      )}
       <div className={`${styles.select} ${className}`}>
-        {/* MODAL */}
-        {isActive && (
-          <div
-            className={styles.modal}
-            onClick={() => setIsActive(false)}
-          ></div>
-        )}
-
         {/* TITLE */}
         <h2
           className={styles["select-title"]}
